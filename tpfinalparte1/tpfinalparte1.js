@@ -1,4 +1,4 @@
-
+//hola
 let portada;
 
 
@@ -16,8 +16,9 @@ function setup() {
 
 
 function draw() {
+  background(255);
   image(portada, 0, 0);
-  
+   
   
   
    if( estado == 0 ){
