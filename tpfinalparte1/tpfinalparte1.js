@@ -1,14 +1,8 @@
-//hola
-
-// luzzz tp
-
-//hola 2
 let portada;
 let estado = 0;// estado inicial
 
 function preload() {
   
-  portada = loadImage(".assets/portada.jpg");
   portada = loadImage("assets/portada.jpg");
   
  
@@ -135,3 +129,4 @@ function draw() {
   }
  }
 }
+
