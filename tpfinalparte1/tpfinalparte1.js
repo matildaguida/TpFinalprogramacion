@@ -3,6 +3,7 @@ let imagenes = [];
 let numero = [
 "1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpeg","9.jpeg","10.jpg","11.jpg","12.jpg","13.jpeg","14.jpeg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpeg"];
 let estado = 0;// estado inicial
+let historia =["historia1.png", "historia1.2.png" ]
 
 function preload() {
   portada = loadImage("assets/portada.jpg");
@@ -32,112 +33,92 @@ function draw() {
      //fill(225); //texto blanco
      textSize(24);
      textAlign(CENTER,CENTER);
-     text("pulse espacio para comenzar ",width/2,height -80); // evento: botones
-     text("creditos  ",width/2,height -25); // evento: botones
-   
+     text("Pulse espacio para comenzar ",width/2,height -80); // evento: botones
+     text("Creditos",width/2+1,height-25); // evento: botones
+   /*
   }else if( estado >= 1 && estado <=numero.length){
     image(imagenes[estado - 1],0,0, width,height);// imagen de fondo// imagen de fondo
     // evento: botones
     // otras cosas a visualizar en pantalla
   }
   if (frameCount %(60 * 3 ) == 0) { //cada 180 frames
-    estado++;
-    if (estado > numero.length){
-      estado = 0; //vuelve a portada 
+    //estado++;
+   // if (estado > numero.length){
+    //  estado = 0; //vuelve a portada 
       
-    }
+   */
+   } else if( estado == 1 ){
+    image(imagenes[0], 0, 0);
+    image(historia[0], width/2,height/3)
+     
+   }else if( estado == 2 ){
+    image(imagenes[1], 0, 0);
+    
+   }else if( estado == 3 ){
+    image(imagenes[2], 0, 0);
+   
+
+  }else if( estado == 4){
+    image(imagenes[3], 0, 0);
+    
+  }else if( estado == 5){
+    image(imagenes[4], 0, 0);
+    
+  }else if( estado == 6){
+    image(imagenes[5], 0, 0);
+    
+  }else if( estado == 7){
+    image(imagenes[6], 0, 0);
+    
+  }else if( estado == 8){
+    image(imagenes[7], 0, 0);
+ 
+  }else if( estado == 9){
+    image(imagenes[8], 0, 0);
+    
+  }else if( estado == 10){
+    image(imagenes[9], 0, 0);
+    
+  }else if( estado == 11){
+    image(imagenes[10], 0, 0);
+    
+  }else if( estado == 12){
+    image(imagenes[11], 0, 0);
+    
+  }else if( estado == 13){
+    image(imagenes[12], 0, 0);
+    
+  }else if( estado == 14){
+    image(imagenes[13], 0, 0);
+    
+  }else if( estado == 15){
+    image(imagenes[14], 0,0);
+    
+  }else if( estado == 16){
+    image(imagenes[15], 0, 0);
+    
+  }else if( estado == 17){
+    image(imagenes[16], 0, 0);
+    
+  }else if( estado == 18){
+    image(imagenes[17], 0, 0);
+    
+  }else if( estado == 19){
+    image(imagenes[18], 0, 0);
+    
+  }else if( estado == 20){
+    image(imagenes[19], 0, 0);
+    
+  }else if( estado == 21){
+    image(imagenes[20], 0, 0);
+    
   }
 }
   
- /* else if( estado == 2 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 3 ){
-        // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-
-  }else if( estado == 4 ){
-// imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 5 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 6 ){
-    // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 7 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla/
-  }else if( estado == 8 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 9 ){
-    // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 10 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }
-  else if( estado == 11){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }
-  else if( estado == 12 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 13 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 14 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 15 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 16 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 17 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 18 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 19 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 20 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }else if( estado == 21 ){
-   // imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }
-  
- function keyPressed(){
-   if (key === ''){ // espacio para avanzar 
-   estado++;
-   if (estado >20){
-     estado = 0; //vuelve al inicio
+function keyPressed(){
+    if (key ===' ') { // espacio para avanzar
+    estado++;
+    } if (estado> numero.length) {
+      estado = 0; // vuelve a portada
    }
-  }*/
+  }
