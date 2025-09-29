@@ -11,7 +11,9 @@ let historias = [
 ];
 let desiciones =[
   "desicion1.png",
-  "desicion1A.png"
+  "desicion1A.png",
+  "desicion1B.png",
+  "desicion1C.png"
   ];
 
 function preload() {
@@ -52,19 +54,15 @@ function draw() {
      textAlign(CENTER,CENTER);
      text("Pulse espacio para comenzar ",width/2,height -80); // evento: botones
      text("Creditos",width/2+1,height-25); // evento: botones
-   /*
-  }else if( estado >= 1 && estado <=numero.length){
-    image(imagenes[estado - 1],0,0, width,height);// imagen de fondo// imagen de fondo
-    // evento: botones
-    // otras cosas a visualizar en pantalla
-  }
+  
+   }else{
+     if ( estado >= 1 && estado <= 4){
   if (frameCount %(60 * 3 ) == 0) { //cada 180 frames
-    //estado++;
-   // if (estado > numero.length){
-    //  estado = 0; //vuelve a portada 
-      
-   */
-   } else if( estado == 1 ){
+    estado++;
+  }
+ }
+   }
+   if( estado == 1 ){
     image(imagenes[0], 0, 0);
     image(historias[0], 150,350,350,100);
      
@@ -83,7 +81,9 @@ function draw() {
  }else if( estado == 5){
     image(imagenes[4], 0, 0);
     image(desiciones[0],165,30,300 ,100);
-    image(desiciones[1],20,360,200,60);
+    image(desiciones[1],10,360,200,60);
+    image(desiciones[2],220,360,200,60);
+    image(desiciones[3],430,360,200,60);
 
 }else if( estado == 6){
     image(imagenes[5], 0, 0);
@@ -103,7 +103,7 @@ function draw() {
 
 }else if( estado == 10){
     image(imagenes[9], 0, 0);
-    
+    image(desiciones[2],20,20,200,60);
 
 }else if( estado == 11){
     image(imagenes[10], 0, 0);
@@ -123,11 +123,11 @@ function draw() {
 
 }else if( estado == 15){
     image(imagenes[14], 0,0);
-    
+    image(desiciones[3],20,20,200,60);
 
 }else if( estado == 16){
     image(imagenes[15], 0, 0);
-    
+     
 
 }else if( estado == 17){
     image(imagenes[16], 0, 0);
