@@ -3,14 +3,31 @@ let imagenes = [];
 let numero = [
 "1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpeg","9.jpeg","10.jpg","11.jpg","12.jpg","13.jpeg","14.jpeg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpeg"];
 let estado = 0;// estado inicial
-let historia =["historia1.png", "historia1.2.png" ]
+//let historia =[ "historia1.png", "historia1.2.png" ]
+let historias = [
+  "historia1.png",
+  "historia1.2.png",
+  "historia1.3.png"
+];
+let desiciones =[
+  "desicion1.png",
+  "desicion1A.png"
+  ];
 
 function preload() {
   portada = loadImage("assets/portada.jpg");
   
   for (let i = 0; i < numero.length; i++) {
     imagenes[i] = loadImage("assets/"+ numero[i]);
-}
+  }  
+  for (let i = 0; i < historias.length; i++) {
+    historias[i] = loadImage("assets/" + historias[i]);
+  }
+  for (let i = 0; i < desiciones.length; i++) {
+    desiciones[i] = loadImage("assets/" +desiciones[i]);
+  }
+
+
 }
 
 function setup() {
@@ -49,72 +66,91 @@ function draw() {
    */
    } else if( estado == 1 ){
     image(imagenes[0], 0, 0);
-    image(historia[0], width/2,height/3)
+    image(historias[0], 150,350,350,100);
      
    }else if( estado == 2 ){
     image(imagenes[1], 0, 0);
-    
-   }else if( estado == 3 ){
-    image(imagenes[2], 0, 0);
+    image(historias[1], 150,330,350,160);
    
+  }else if( estado == 3 ){
+    image(imagenes[2], 0, 0);
+    image(historias[1], 150,330,350,160);
 
   }else if( estado == 4){
     image(imagenes[3], 0, 0);
-    
-  }else if( estado == 5){
+    image(historias[2], 150,330,350,160);
+ 
+ }else if( estado == 5){
     image(imagenes[4], 0, 0);
-    
-  }else if( estado == 6){
+    image(desiciones[0],165,30,300 ,100);
+    image(desiciones[1],20,360,200,60);
+
+}else if( estado == 6){
     image(imagenes[5], 0, 0);
-    
-  }else if( estado == 7){
+    image(desiciones[1],20,20,200,60);
+  
+}else if( estado == 7){
     image(imagenes[6], 0, 0);
     
-  }else if( estado == 8){
+
+}else if( estado == 8){
     image(imagenes[7], 0, 0);
  
-  }else if( estado == 9){
+ 
+}else if( estado == 9){
     image(imagenes[8], 0, 0);
     
-  }else if( estado == 10){
+
+}else if( estado == 10){
     image(imagenes[9], 0, 0);
     
-  }else if( estado == 11){
+
+}else if( estado == 11){
     image(imagenes[10], 0, 0);
     
-  }else if( estado == 12){
+
+}else if( estado == 12){
     image(imagenes[11], 0, 0);
     
-  }else if( estado == 13){
+
+}else if( estado == 13){
     image(imagenes[12], 0, 0);
     
-  }else if( estado == 14){
+
+}else if( estado == 14){
     image(imagenes[13], 0, 0);
     
-  }else if( estado == 15){
+
+}else if( estado == 15){
     image(imagenes[14], 0,0);
     
-  }else if( estado == 16){
+
+}else if( estado == 16){
     image(imagenes[15], 0, 0);
     
-  }else if( estado == 17){
+
+}else if( estado == 17){
     image(imagenes[16], 0, 0);
     
-  }else if( estado == 18){
+   
+}else if( estado == 18){
     image(imagenes[17], 0, 0);
     
-  }else if( estado == 19){
+
+}else if( estado == 19){
     image(imagenes[18], 0, 0);
     
-  }else if( estado == 20){
+
+}else if( estado == 20){
     image(imagenes[19], 0, 0);
     
-  }else if( estado == 21){
+
+}else if( estado == 21){
     image(imagenes[20], 0, 0);
     
   }
 }
-  
+   /* 
 function keyPressed(){
     if (key ===' ') { // espacio para avanzar
     estado++;
@@ -122,3 +158,22 @@ function keyPressed(){
       estado = 0; // vuelve a portada
    }
   }
+    */
+    
+    function keyPressed() {
+  // avanzar con barra espaciadora o flecha derecha
+  if (key === ' ' || keyCode === RIGHT_ARROW) {
+    estado++;
+    if (estado > numero.length) {
+      estado = 0; // vuelve a portada
+    }
+  }
+
+  // retroceder con flecha izquierda
+  if (keyCode === LEFT_ARROW) {
+    estado--;
+    if (estado < 0) {
+      estado = numero.length; // si baja de 0, va a la última pantalla
+    }
+  }
+}
