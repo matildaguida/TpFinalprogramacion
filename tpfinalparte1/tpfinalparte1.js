@@ -25,7 +25,7 @@ function preload() {
   for (let i = 0; i < historias.length; i++) {
     historias[i] = loadImage("assets/" + historias[i]);
   }
-  for (let i = 0; i < desiciones.length; i++) {
+  for (let i = 0; i < decisiones.length; i++) {
     decisiones[i] = loadImage("assets/" +decisiones[i]);
   }
 
@@ -86,7 +86,7 @@ function draw() {
 
 }else if( estado == 6){
     image(imagenes[5], 0, 0);
-    image(desiciones[1],20,20,200,60);
+    image(decisiones[1],20,20,200,60);
   
 }else if( estado == 7){
     image(imagenes[6], 0, 0);
@@ -149,7 +149,7 @@ function draw() {
     
   }
 }
-<<<<<<< HEAD
+
    /* 
 function keyPressed(){
     if (key ===' ') { // espacio para avanzar
@@ -159,7 +159,7 @@ function keyPressed(){
    }
   }
     */
-    para botones para que vayan cuando tocas decisiones revisar despues 
+   // para botones para que vayan cuando tocas decisiones revisar despues 
   /*  function mousePressed() {
   // === MODELO BASE PARA DECISIONES ===
   if (estado == X) {   // X es la pantalla donde aparecen las opciones
@@ -179,9 +179,9 @@ function keyPressed(){
       estado = destinoC;
     }*/
     
-=======
 
->>>>>>> fbbf83404cf932676abe7ab1b6cca5373c97bb1b
+
+
     function keyPressed() {
  
   if (key === ' ' || keyCode === RIGHT_ARROW) {
