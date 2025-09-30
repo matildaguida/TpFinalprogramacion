@@ -57,7 +57,7 @@ function draw() {
   
    }else{
      if ( estado >= 1 && estado <= 4){
-  if (frameCount %(60 * 3 ) == 0) { //cada 180 frames
+  if (frameCount %(75 * 3 ) == 0) { 
     estado++;
   }
  }
