@@ -23,32 +23,14 @@ let numero = [
     "20.jpg",
     "21.jpeg"];
 let estado = 0;// estado inicial
-//let historia =[ "historia1.png", "historia1.2.png" ]
-let historias = [
-  "historia1.png",
-  "historia1.2.png",
-  "historia1.3.png"
-];
-let decisiones =[
-  "decision1.png",
-  "decision1A.png",
-  "decision1B.png",
-  "decision1C.png"
-  ];
+
 
 function preload() {
   portada = loadImage("assets/portada.jpg");
   
   for (let i = 0; i < numero.length; i++) {
     imagenes[i] = loadImage("assets/"+ numero[i]);
-  }  
-  for (let i = 0; i < historias.length; i++) {
-    historias[i] = loadImage("assets/" + historias[i]);
-  }
-  for (let i = 0; i < decisiones.length; i++) {
-    decisiones[i] = loadImage("assets/" +decisiones[i]);
-  }
-
+  } 
 
 }
 
@@ -56,57 +38,56 @@ function setup() {
    createCanvas(640,480);
    frameRate(60);//aseguramos 60 FPS 
 }
+ 
+
 
 function draw() {
   
-  background(255);
+  background(255); 
   
-   if( estado == 0 ){
-     image(portada,0,0,width, height);// imagen de fondo
-     fill(200,230);// fondo del boton semi transparente 
+
+  
+  if (estado == 0) {
+  image(portada, 0, 0, width, height);
+  fill(200,230);// fondo del boton semi transparente 
      rectMode(CENTER);
      rect(width/2,height -80, 350, 50,10); // x, y , ancho ,alto, borde redondeado 
      rect(width/2,height -25, 100, 50,10); // x, y , ancho ,alto, borde redondeado 
-    // otras cosas a visualizar en pantalla
-     fill(0,0,225); //texto azul
-     //fill(225); //texto blanco
+     fill(0,0,225);
      textSize(24);
      textAlign(CENTER,CENTER);
-     text("Pulse espacio para comenzar ",width/2,height -80);
-     text("Creditos",width/2+1,height-25);
-   }else{
-     if ( estado >= 1 && estado <= 4){
-  if (frameCount %(75 * 3 ) == 0) { 
+     
+      if (boton(width/2, height - 80, 200, 50, "Comenzar")) {
+    estado = 1;
+  }
+  
+}else { 
+ if ( estado >= 1 && estado <= 4){
+  if (frameCount %(45 * 3 ) == 0) { 
     estado++;
   }
  }
    }
    if( estado == 1 ){
     image(imagenes[0], 0, 0);
-    image(historias[0], 150,350,350,100);
+ 
      
    }else if( estado == 2 ){
     image(imagenes[1], 0, 0);
-    image(historias[1], 150,330,350,160);
-   
+  
   }else if( estado == 3 ){
     image(imagenes[2], 0, 0);
-    image(historias[1], 150,330,350,160);
+   
 
   }else if( estado == 4){
     image(imagenes[3], 0, 0);
-    image(historias[2], 150,330,350,160);
- 
+
  }else if( estado == 5){
     image(imagenes[4], 0, 0);
-    image(decisiones[0],165,30,300 ,100);
-    image(decisiones[1],10,360,200,60);
-    image(decisiones[2],220,360,200,60);
-    image(decisiones[3],430,360,200,60);
-
+ 
 }else if( estado == 6){
     image(imagenes[5], 0, 0);
-    image(decisiones[1],20,20,200,60);
+   // image(decisiones[1],20,20,200,60);
   
 }else if( estado == 7){
     image(imagenes[6], 0, 0);
@@ -122,7 +103,7 @@ function draw() {
 
 }else if( estado == 10){
     image(imagenes[9], 0, 0);
-    image(decisiones[2],20,20,200,60);
+    //image(decisiones[2],20,20,200,60);
 
 }else if( estado == 11){
     image(imagenes[10], 0, 0);
@@ -142,7 +123,7 @@ function draw() {
 
 }else if( estado == 15){
     image(imagenes[14], 0,0);
-    image(decisiones[3],20,20,200,60);
+    //image(decisiones[3],20,20,200,60);
 
 }else if( estado == 16){
     image(imagenes[15], 0, 0);
@@ -166,33 +147,22 @@ function draw() {
 
 }else if( estado == 21){
     image(imagenes[20], 0, 0);
-    
-  }
+
 }
-   // para botones para que vayan cuando tocas decisiones revisar despues 
-  /*  function mousePressed() {
-  // === MODELO BASE PARA DECISIONES ===
-  if (estado == X) {   // X es la pantalla donde aparecen las opciones
+}
 
-    // Opción A
-    if (mouseX > x1 && mouseX < x1 + ancho && mouseY > y1 && mouseY < y1 + alto) {
-      estado = destinoA; // la pantalla a la que querés ir
-    }
-
-    // Opción B
-    else if (mouseX > x2 && mouseX < x2 + ancho && mouseY > y2 && mouseY < y2 + alto) {
-      estado = destinoB;
-    }
-
-    // Opción C
-    else if (mouseX > x3 && mouseX < x3 + ancho && mouseY > y3 && mouseY < y3 + alto) {
-      estado = destinoC;
-    }*/
-    
-
-
-
-    function keyPressed() {
+  function boton(x,y,w,h,txt){
+     
+   if (mouseIsPressed &&   // mouse presionado
+      mouseX > x - w/2 && // dentro del ancho
+      mouseX < x + w/2 &&
+      mouseY > y - h/2 && // dentro del alto
+      mouseY < y + h/2) {
+    return true;
+  }
+  return false;
+}  
+function keyPressed() {
  
   if (key === ' ' || keyCode === RIGHT_ARROW) {
     estado++;
