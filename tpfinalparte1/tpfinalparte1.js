@@ -1,7 +1,27 @@
 let portada;
 let imagenes = [];
 let numero = [
-"1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpeg","9.jpeg","10.jpg","11.jpg","12.jpg","13.jpeg","14.jpeg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpeg"];
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpeg",
+    "9.jpeg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpeg",
+    "14.jpeg",
+    "15.jpg",
+    "16.jpg",
+    "17.jpg",
+    "18.jpg",
+    "19.jpg",
+    "20.jpg",
+    "21.jpeg"];
 let estado = 0;// estado inicial
 //let historia =[ "historia1.png", "historia1.2.png" ]
 let historias = [
@@ -149,16 +169,6 @@ function draw() {
     
   }
 }
-
-   /* 
-function keyPressed(){
-    if (key ===' ') { // espacio para avanzar
-    estado++;
-    } if (estado> numero.length) {
-      estado = 0; // vuelve a portada
-   }
-  }
-    */
    // para botones para que vayan cuando tocas decisiones revisar despues 
   /*  function mousePressed() {
   // === MODELO BASE PARA DECISIONES ===
