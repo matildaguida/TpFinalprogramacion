@@ -52,9 +52,8 @@ function draw() {
      //fill(225); //texto blanco
      textSize(24);
      textAlign(CENTER,CENTER);
-     text("Pulse espacio para comenzar ",width/2,height -80); // evento: botones
-     text("Creditos",width/2+1,height-25); // evento: botones
-  
+     text("Pulse espacio para comenzar ",width/2,height -80);
+     text("Creditos",width/2+1,height-25);
    }else{
      if ( estado >= 1 && estado <= 4){
   if (frameCount %(75 * 3 ) == 0) { 
@@ -150,30 +149,21 @@ function draw() {
     
   }
 }
-   /* 
-function keyPressed(){
-    if (key ===' ') { // espacio para avanzar
-    estado++;
-    } if (estado> numero.length) {
-      estado = 0; // vuelve a portada
-   }
-  }
-    */
-    
+
     function keyPressed() {
-  // avanzar con barra espaciadora o flecha derecha
+ 
   if (key === ' ' || keyCode === RIGHT_ARROW) {
     estado++;
     if (estado > numero.length) {
-      estado = 0; // vuelve a portada
+      estado = 0; 
     }
   }
 
-  // retroceder con flecha izquierda
+  
   if (keyCode === LEFT_ARROW) {
     estado--;
     if (estado < 0) {
-      estado = numero.length; // si baja de 0, va a la última pantalla
+      estado = numero.length; 
     }
   }
 }
