@@ -23,15 +23,15 @@ let numero = [
     "20.jpg",
     "21.jpeg"];
 let estado = 0;// estado inicial
-
+let miFuente;
 
 function preload() {
-  portada = loadImage("assets/portada.jpg");
+  portada = loadImage("assets/portada.jpeg");
   
   for (let i = 0; i < numero.length; i++) {
     imagenes[i] = loadImage("assets/"+ numero[i]);
   } 
-
+   miFuente = loadFont("assets/Jersey15-Regular.ttf"); 
 }
 
 function setup() {
@@ -49,13 +49,17 @@ function draw() {
   
   if (estado == 0) {
   image(portada, 0, 0, width, height);
-  fill(200,230);// fondo del boton semi transparente 
+  //fill(200,230);// fondo del boton semi transparente 
+     fill(8,58, 100,250);
      rectMode(CENTER);
      rect(width/2,height -80, 350, 50,10); // x, y , ancho ,alto, borde redondeado 
      rect(width/2,height -25, 100, 50,10); // x, y , ancho ,alto, borde redondeado 
      fill(0,0,225);
+     textFont(miFuente);
      textSize(24);
+     fill(59,100,8);
      textAlign(CENTER,CENTER);
+     text("Pulse 'Espacio' para comenzar", width/2,height -82);
      
       if (boton(width/2, height - 80, 200, 50, "Comenzar")) {
     estado = 1;
@@ -87,7 +91,7 @@ function draw() {
  
 }else if( estado == 6){
     image(imagenes[5], 0, 0);
-   // image(decisiones[1],20,20,200,60);
+
   
 }else if( estado == 7){
     image(imagenes[6], 0, 0);
@@ -162,6 +166,7 @@ function draw() {
   }
   return false;
 }  
+
 function keyPressed() {
  
   if (key === ' ' || keyCode === RIGHT_ARROW) {
