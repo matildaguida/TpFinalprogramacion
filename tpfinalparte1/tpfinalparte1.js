@@ -9,11 +9,11 @@ let historias = [
   "historia1.2.png",
   "historia1.3.png"
 ];
-let desiciones =[
-  "desicion1.png",
-  "desicion1A.png",
-  "desicion1B.png",
-  "desicion1C.png"
+let decisiones =[
+  "decision1.png",
+  "decision1A.png",
+  "decision1B.png",
+  "decision1C.png"
   ];
 
 function preload() {
@@ -26,7 +26,7 @@ function preload() {
     historias[i] = loadImage("assets/" + historias[i]);
   }
   for (let i = 0; i < desiciones.length; i++) {
-    desiciones[i] = loadImage("assets/" +desiciones[i]);
+    decisiones[i] = loadImage("assets/" +decisiones[i]);
   }
 
 
@@ -80,10 +80,10 @@ function draw() {
  
  }else if( estado == 5){
     image(imagenes[4], 0, 0);
-    image(desiciones[0],165,30,300 ,100);
-    image(desiciones[1],10,360,200,60);
-    image(desiciones[2],220,360,200,60);
-    image(desiciones[3],430,360,200,60);
+    image(decisiones[0],165,30,300 ,100);
+    image(decisiones[1],10,360,200,60);
+    image(decisiones[2],220,360,200,60);
+    image(decisiones[3],430,360,200,60);
 
 }else if( estado == 6){
     image(imagenes[5], 0, 0);
@@ -103,7 +103,7 @@ function draw() {
 
 }else if( estado == 10){
     image(imagenes[9], 0, 0);
-    image(desiciones[2],20,20,200,60);
+    image(decisiones[2],20,20,200,60);
 
 }else if( estado == 11){
     image(imagenes[10], 0, 0);
@@ -123,7 +123,7 @@ function draw() {
 
 }else if( estado == 15){
     image(imagenes[14], 0,0);
-    image(desiciones[3],20,20,200,60);
+    image(decisiones[3],20,20,200,60);
 
 }else if( estado == 16){
     image(imagenes[15], 0, 0);
