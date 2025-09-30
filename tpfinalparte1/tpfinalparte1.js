@@ -159,6 +159,25 @@ function keyPressed(){
    }
   }
     */
+    para botones para que vayan cuando tocas decisiones revisar despues 
+  /*  function mousePressed() {
+  // === MODELO BASE PARA DECISIONES ===
+  if (estado == X) {   // X es la pantalla donde aparecen las opciones
+
+    // Opción A
+    if (mouseX > x1 && mouseX < x1 + ancho && mouseY > y1 && mouseY < y1 + alto) {
+      estado = destinoA; // la pantalla a la que querés ir
+    }
+
+    // Opción B
+    else if (mouseX > x2 && mouseX < x2 + ancho && mouseY > y2 && mouseY < y2 + alto) {
+      estado = destinoB;
+    }
+
+    // Opción C
+    else if (mouseX > x3 && mouseX < x3 + ancho && mouseY > y3 && mouseY < y3 + alto) {
+      estado = destinoC;
+    }*/
     
     function keyPressed() {
   // avanzar con barra espaciadora o flecha derecha
