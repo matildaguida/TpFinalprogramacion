@@ -50,7 +50,7 @@ function draw() {
   if (estado == 0) {
   image(portada, 0, 0, width, height);
   //fill(200,230);// fondo del boton semi transparente 
-     fill(8,58, 100,250);
+     fill(8,58, 100,220);
      rectMode(CENTER);
      rect(width/2,height -80, 350, 50,10); // x, y , ancho ,alto, borde redondeado 
      rect(width/2,height -25, 100, 50,10); // x, y , ancho ,alto, borde redondeado 
