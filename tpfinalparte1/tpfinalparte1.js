@@ -50,7 +50,11 @@ function draw() {
   if (estado == 0) {
   image(portada, 0, 0, width, height);
   //fill(200,230);// fondo del boton semi transparente 
+<<<<<<< HEAD
      fill(8,58, 100,220);
+=======
+     fill(8,58, 110,250);
+>>>>>>> baa48b704752e656097be526dcef7185244daa0b
      rectMode(CENTER);
      rect(width/2,height -80, 350, 50,10); // x, y , ancho ,alto, borde redondeado 
      rect(width/2,height -25, 100, 50,10); // x, y , ancho ,alto, borde redondeado 
@@ -60,9 +64,13 @@ function draw() {
      fill(59,100,8);
      textAlign(CENTER,CENTER);
      text("Pulse 'Espacio' para comenzar", width/2,height -82);
+     text("creditos", width/2,height -28);
+
      
       if (boton(width/2, height - 80, 200, 50, "Comenzar")) {
     estado = 1;
+    // if (boton(width/2, height - 80, 200, 50, "creditos")) {
+   // estado = 2;
   }
   
 }else { 
