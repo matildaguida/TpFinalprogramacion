@@ -21,7 +21,8 @@ let numero = [
     "18.jpg",
     "19.jpg",
     "20.jpg",
-    "21.jpeg"];
+    "21.jpeg",
+    "22.jpg"];
 let estado = 0;// estado inicial
 let miFuente;
 
@@ -71,7 +72,7 @@ function draw() {
     estado = 1;
       }
     if (boton(width/2,height -25, 100, 50,10 ,"creditos")) {
-    estado = 2;
+    estado = 22;
   }
  
 //}else { 
@@ -118,7 +119,6 @@ function draw() {
 
 }else if( estado == 10){
     image(imagenes[9], 0, 0);
-    //image(decisiones[2],20,20,200,60);
 
 }else if( estado == 11){
     image(imagenes[10], 0, 0);
@@ -138,7 +138,6 @@ function draw() {
 
 }else if( estado == 15){
     image(imagenes[14], 0,0);
-    //image(decisiones[3],20,20,200,60);
 
 }else if( estado == 16){
     image(imagenes[15], 0, 0);
@@ -162,6 +161,9 @@ function draw() {
 
 }else if( estado == 21){
     image(imagenes[20], 0, 0);
+
+}else if( estado == 22){
+    image(imagenes[21], 0, 0);
 
 }
 }
