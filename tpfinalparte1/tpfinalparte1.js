@@ -58,29 +58,42 @@ function draw() {
   } else if (estado >= 1 && estado <= 4) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
   } else if (estado === 5) {
-    mostrarPregunta(); // decision en la imagen 5
+    mostrarPregunta();
   } else if (estado === 6) {
-    mostrarDecision2A(); // decisión en la imagen 6
+    mostrarDecision2A();
   } else if (estado === 7 || estado === 8) {
     mostrarImagenConTexto(estado - 1, textos[estado]); 
   } else if (estado === 9) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
+    botonExtraInicio();
   } else if (estado === 10) {
-    mostrarDecision2B(); // decision en la imagen
-  } else if (estado === 11 ) {
+    mostrarDecision2B();
+  } else if (estado === 11) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
   } else if (estado === 12) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
-  }   else if (estado === 13) {
+    botonExtraInicio();
+  } else if (estado === 13) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
-  }  else if (estado === 14) {
+    botonExtraInicio();
+  } else if (estado === 14) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
+    botonExtraInicio();
   } else if (estado === 15) {
-    mostrarDecision2C(); // decisión en la imagen 
-  } else if (estado >= 16 && estado <= numero.length) {
+    mostrarDecision2C();
+  } else if (estado === 16 || estado === 17) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
+  } else if (estado === 18) {
+    mostrarImagenConTexto(estado - 1, textos[estado]);
+    botonExtraInicio();
+  } else if (estado === 19) {
+    mostrarImagenConTexto(estado - 1, textos[estado]);
+    botonExtraInicio();
+  } else if (estado === numero.length) {
+    mostrarImagenConTexto(numero.length - 1, textos[numero.length]);
   } else if (estado === numero.length + 1) {
     mostrarImagenConTexto(numero.length - 1, textos[20]);
+    botonExtraInicio();
   }
 }
 
@@ -265,6 +278,12 @@ function botonConTexto(x, y, w, h, txt) {
   text(txt, x, y);
   
   return dentro && mouseIsPressed;
+}
+
+function botonExtraInicio() {
+  if (botonConTexto(width/2 + 245, height - 39, 110, 40, "Volver al Inicio")) {
+    estado = 0; 
+  }
 }
 
 // Navegación por teclado
