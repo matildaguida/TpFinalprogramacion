@@ -9,6 +9,15 @@ let miFuente;
 let tiempoEstado = 0; // guarda cuando entramos al estado
 let duracionEstado = 3000; // 3000 ms = 3 segundos por estado
 
+let numeroAnimacion =[
+  "1.png","2.png","3.png", "4.png","5.png","6.png","7.png","8.png","9.png","10.png","11.png","12.png","13.png","14.png","15.png","16.png",
+  "17.png","18.png","19.png","20.png","21.png","22.png"
+  ];
+let rym = [];  //declaro mi arreglo sin tamano
+
+let marcaEnElTiempo = 0;
+let contadorIndiceImg = 0;
+
 // Opcional: textos para cada estado (puede quedar vacío si no hay)
 let textos = [];
 textos[1]= "Rick descubre que la Federación Galáctica ha creado un arma definitiva: un portal rojo que no solo abre dimensiones, sino que borra realidades completas. Si la activan, podrían eliminar la Tierra de la existencia.";
@@ -33,6 +42,11 @@ function preload() {
   for (let i = 0; i < numero.length; i++) {
     imagenes[i] = loadImage("assets/" + numero[i]);
   } 
+  
+  for (let i = 0; i < numeroAnimacion.length; i++) {
+    rym[i] = loadImage("assets/animacion/" + numeroAnimacion[i]);
+  } 
+  
   miFuente = loadFont("assets/Jersey15-Regular.ttf"); 
 }
 
@@ -40,6 +54,7 @@ function setup() {
   createCanvas(640, 480);
   frameRate(60);
   textFont(miFuente);
+   
 }
 
 function draw() {
@@ -47,7 +62,8 @@ function draw() {
   
    // Avanzar automáticamente de estado 1 a 4 usando millis()
   if (estado >= 1 && estado <= 4) {
-    if (tiempoEstado === 0) tiempoEstado = millis(); // guardar inicio
+    if (tiempoEstado === 0) tiempoEstado = millis();{
+    }// guardar inicio
   if (millis() - tiempoEstado > duracionEstado) {
       estado++;
       tiempoEstado = millis(); // reinicia el contador para el siguiente estado
@@ -107,5 +123,17 @@ function draw() {
   } else if (estado === numero.length + 1) {
     mostrarImagenConTexto(numero.length - 1, textos[20]);
     botonExtraInicio();
+   
+   if ( (millis() - marcaEnElTiempo) > 470 ) {  
+    //
+    marcaEnElTiempo = millis();
+   
+    contadorIndiceImg++;
+    if ( contadorIndiceImg == rym.length ) {  //similar a usar % modulo
+      contadorIndiceImg =  (contadorIndiceImg + 1) % rym.length;
+    }
   }
+ image(rym[contadorIndiceImg], width/2-50, height - 270, 120, 120);
+ 
+ }
 }
