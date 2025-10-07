@@ -190,44 +190,11 @@ function botonExtraInicio() {
     estado = 0; 
   }
 }
-
-function botonFinalA1 (){
-   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
-    estado = 9;
-   }
-}
-function botonFinalA2 (){
-   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
-    estado = 12;
-}
-}
-function botonFinalB1 (){
-   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
-    estado = 14;
-}
-}
-function botonFinalB2(){
-   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
-    estado = 13;
-}
-}
-function botonFinalC1(){
-   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
-    estado = 19;
-}
-}
-function botonFinalC2 (){
-   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
-    estado = 18;
-  }
-}
-
 function botonesFinales ( e ){
    if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
     estado = e;  // sin retorno: estan editando una variable global
   }
 }
-
 
 // Navegación por teclado
 function keyPressed() {

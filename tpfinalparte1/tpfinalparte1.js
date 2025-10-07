@@ -26,7 +26,7 @@ textos[16] = "C1 Eliminan las copias pero causa una realidad fragmentada, multip
 textos[17] = "C2 Mortu lidera clones, victoria epica coordinada.";
 textos[18] = "FINAL BUENO: Los mortys unidos derrotan a la federacion.El rick original queda sorprendido al ver a morty liderando clones de si mismo. Morty liderando clones de si mismo. Morty general de los Mortys salva el universo.";
 textos[19] = "FINAL TRAGICO: Rick elimina las copias, pero la realidad queda dañada. Al volver a casa hay multiples summers y jerrys coexistiendo.El universo se salva, pero queda roto.";//final C1
-textos[20] = "Créditos: Alumna Moral Cardozo Luz Clarita y Guida Matilda"; // texto para créditos
+textos[20] = "Alumna: Moral Cardozo Luz Clarita y Guida Matilda \n Los creadores de Rick y Morty son Justin Roiland y Dan Harmon. Esta serie de animación para adultos se estrenó en 2013 en Adult Swim y Cartoon Network. " ; // texto para créditos
 
 function preload() {
   portada = loadImage("assets/portada.jpeg");
@@ -66,10 +66,10 @@ function draw() {
     mostrarDecision2A();
   } else if (estado === 7) {
     mostrarImagenConTexto(estado - 1, textos[estado]); 
-    botonFinalA1(); 
+    botonesFinales( 9 ); 
   } else if (estado === 8) {
     mostrarImagenConTexto(estado - 1, textos[estado]); 
-    botonFinalA2();
+    botonesFinales( 12 );
   } else if (estado === 9) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
     botonExtraInicio();
@@ -77,7 +77,7 @@ function draw() {
     mostrarDecision2B();
   } else if (estado === 11) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
-    botonFinalB1();
+    botonesFinales( 14 );
   } else if (estado === 12) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
     botonExtraInicio();
@@ -91,11 +91,9 @@ function draw() {
     mostrarDecision2C();
   } else if (estado === 16 ) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
-    //botonFinalC1();
     botonesFinales( 19 );
   } else if (estado === 17) {
-    mostrarImagenConTexto(estado - 1, textos[estado]);
-     //botonFinalC2();   
+    mostrarImagenConTexto(estado - 1, textos[estado]);  
     botonesFinales( 18 );
   }else if (estado === 18) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
@@ -105,6 +103,7 @@ function draw() {
     botonExtraInicio();
   } else if (estado === numero.length) {
     mostrarImagenConTexto(numero.length - 1, textos[numero.length]);
+     botonExtraInicio();
   } else if (estado === numero.length + 1) {
     mostrarImagenConTexto(numero.length - 1, textos[20]);
     botonExtraInicio();
