@@ -91,10 +91,12 @@ function draw() {
     mostrarDecision2C();
   } else if (estado === 16 ) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
-    botonFinalC1();
+    //botonFinalC1();
+    botonesFinales( 19 );
   } else if (estado === 17) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
-     botonFinalC2();   
+     //botonFinalC2();   
+    botonesFinales( 18 );
   }else if (estado === 18) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
     botonExtraInicio();

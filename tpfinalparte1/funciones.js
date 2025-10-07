@@ -13,8 +13,12 @@ function mostrarPortada() {
   text("Pulse 'Espacio' para comenzar", width / 2, height - 80);
   text("Créditos", width / 2, height - 25);
 
-  if (boton(width / 2, height - 80, 350, 50)) estado = 1;
-  if (boton(width / 2, height - 25, 100, 50)) estado = numero.length + 1;
+  if (boton(width / 2, height - 80, 350, 50)){
+    estado = 1;
+  }
+  if (boton(width / 2, height - 25, 100, 50)){
+    estado = numero.length + 1;
+  }
 } 
 
 // Función para mostrar cualquier imagen con un texto opcional
@@ -217,6 +221,14 @@ function botonFinalC2 (){
     estado = 18;
   }
 }
+
+function botonesFinales ( e ){
+   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
+    estado = e;  // sin retorno: estan editando una variable global
+  }
+}
+
+
 // Navegación por teclado
 function keyPressed() {
   if (key === ' ') {
