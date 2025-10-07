@@ -13,7 +13,7 @@ function mostrarPortada() {
   textSize(24);
   text("Pulse 'Espacio' para comenzar", width / 2, height - 80);
   text("Créditos", width / 2, height - 25);
-  text("musica",width /2 + 250,height -450);
+  text("Musica",width /2 + 250,height -450);
 
   if (boton(width / 2, height - 80, 350, 50)){
     estado = 1;
@@ -203,14 +203,15 @@ function botonExtraInicio() {
 }
 function botonesFinales ( e ){
    if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
-    estado = e;  // sin retorno: estan editando una variable global
+    estado = e;  
   }
 }
 
-// Navegación por teclado
+
 function keyPressed() {
-  if (key === ' ') {
+ if (key === ' ' && estado < 5) { 
     estado++;
-    if (estado > numero.length + 1) estado = 0;
+    if (estado > 4) estado = 4; 
+    
   }
- }
+}
