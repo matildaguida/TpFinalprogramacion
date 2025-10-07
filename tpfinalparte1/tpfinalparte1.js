@@ -53,25 +53,9 @@ function draw() {
       tiempoEstado = millis(); // reinicia el contador para el siguiente estado
   }
  
- 
- // if ([7, 8, 11, 13, 16, 17].includes(estado)) {
- // if (tiempoEstado === 0) tiempoEstado = millis();
-
-  // Tiempo de duración de la escena antes del final (3 segundos)
-  //if (millis() - tiempoEstado > duracionEstado) {
-    //if (estado === 7) estado = 9;    // A1 → Final A1
-   // if (estado === 8) estado = 12;   // A2 → Final A2
-    //if (estado === 11) estado = 14;  // B1 → Final B1
-    //if (estado === 13) estado = 13;  // B2 → Final B2 (ya es final)
-    //if (estado === 16) estado = 19;  // C1 → Final C1
-    //if (estado === 17) estado = 18;  // C2 → Final C2
- //   tiempoEstado = 0;
- // }
-
 } else {
     tiempoEstado = 0; // resetea si estamos fuera del rango 1-4
   }
-
   if (estado === 0) {
     mostrarPortada();
   } else if (estado >= 1 && estado <= 4) {
@@ -80,8 +64,12 @@ function draw() {
     mostrarPregunta();
   } else if (estado === 6) {
     mostrarDecision2A();
-  } else if (estado === 7 || estado === 8) {
+  } else if (estado === 7) {
     mostrarImagenConTexto(estado - 1, textos[estado]); 
+    botonFinalA1(); 
+  } else if (estado === 8) {
+    mostrarImagenConTexto(estado - 1, textos[estado]); 
+    botonFinalA2();
   } else if (estado === 9) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
     botonExtraInicio();
@@ -89,6 +77,7 @@ function draw() {
     mostrarDecision2B();
   } else if (estado === 11) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
+    botonFinalB1();
   } else if (estado === 12) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
     botonExtraInicio();
@@ -100,9 +89,13 @@ function draw() {
     botonExtraInicio();
   } else if (estado === 15) {
     mostrarDecision2C();
-  } else if (estado === 16 || estado === 17) {
+  } else if (estado === 16 ) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
-  } else if (estado === 18) {
+    botonFinalC1();
+  } else if (estado === 17) {
+    mostrarImagenConTexto(estado - 1, textos[estado]);
+     botonFinalC2();   
+  }else if (estado === 18) {
     mostrarImagenConTexto(estado - 1, textos[estado]);
     botonExtraInicio();
   } else if (estado === 19) {

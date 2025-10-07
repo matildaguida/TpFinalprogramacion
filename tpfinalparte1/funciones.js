@@ -15,7 +15,7 @@ function mostrarPortada() {
 
   if (boton(width / 2, height - 80, 350, 50)) estado = 1;
   if (boton(width / 2, height - 25, 100, 50)) estado = numero.length + 1;
-}
+} 
 
 // Función para mostrar cualquier imagen con un texto opcional
 function mostrarImagenConTexto(indiceImagen, texto) {
@@ -53,15 +53,15 @@ function mostrarPregunta(){
   text("¿Cómo se infiltran en la base de la Federación?", width/2, 50);
   
    // Botón A
-  if (botonConTexto(width/2 - 215, height - 80, 200, 50, "A. Disfrazados de soldados alienigenas")) {
+  if (botonConTexto(width/2 - 215, height - 100, 200, 50, "A. Disfrazados de soldados alienigenas")) {
     estado = 6;
   }
   // Botón B
-  if (botonConTexto(width/2 +10, height - 80, 230, 50, "B. A lo bruto,con armas interdimensionales")) {
+  if (botonConTexto(width/2 +10, height - 100, 230, 50, "B. A lo bruto,con armas interdimensionales")) {
     estado = 10;
   }
   // Botón C
-  if (botonConTexto(width/2 + 225, height - 80, 180, 50, "C. Truco de lineas de tiempo rotas")) {
+  if (botonConTexto(width/2 + 225, height - 100, 180, 50, "C. Truco de lineas de tiempo rotas")) {
     estado = 15;
   }
 }
@@ -187,15 +187,40 @@ function botonExtraInicio() {
   }
 }
 
+function botonFinalA1 (){
+   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
+    estado = 9;
+   }
+}
+function botonFinalA2 (){
+   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
+    estado = 12;
+}
+}
+function botonFinalB1 (){
+   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
+    estado = 14;
+}
+}
+function botonFinalB2(){
+   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
+    estado = 13;
+}
+}
+function botonFinalC1(){
+   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
+    estado = 19;
+}
+}
+function botonFinalC2 (){
+   if (botonConTexto(width/2 , height - 39, 110, 40, "Siguiente...")) {
+    estado = 18;
+  }
+}
 // Navegación por teclado
 function keyPressed() {
-  if (key === ' ' || keyCode === RIGHT_ARROW) {
+  if (key === ' ') {
     estado++;
     if (estado > numero.length + 1) estado = 0;
-  }
-
-  if (keyCode === LEFT_ARROW) {
-    estado--;
-    if (estado < 0) estado = numero.length + 1;
   }
 }
