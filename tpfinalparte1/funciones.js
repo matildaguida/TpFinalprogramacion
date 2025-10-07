@@ -197,7 +197,7 @@ function botonConTexto(x, y, w, h, txt) {
 }
 
 function botonExtraInicio() {
-  if (botonConTexto(width/2 + 245, height - 39, 110, 40, "Volver al Inicio")) {
+  if (botonConTexto(width/2 + 252, height - 39, 90, 40, "Volver al Inicio")) {
     estado = 0; 
   }
 }
