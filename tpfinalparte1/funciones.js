@@ -22,6 +22,12 @@ function mostrarPortada() {
     estado = numero.length + 1;
   }
   if (boton(width/2 + 250, height -450,100,50)){
+    musicaActiva = !musicaActiva;
+     if (musicaActiva) {
+    sonido.play(); 
+  } else {
+    sonido.stop();
+  }
     estado = 0;
 } 
 }
@@ -207,4 +213,4 @@ function keyPressed() {
     estado++;
     if (estado > numero.length + 1) estado = 0;
   }
-}
+ }

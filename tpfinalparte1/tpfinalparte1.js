@@ -8,7 +8,8 @@ let estado = 0; // Estado inicial
 let miFuente;
 let tiempoEstado = 0; // guarda cuando entramos al estado
 let duracionEstado = 3000; // 3000 ms = 3 segundos por estado
-
+let sonido;
+let musicaActiva = false;
 let numeroAnimacion =[
   "1.png","2.png","3.png", "4.png","5.png","6.png","7.png","8.png","9.png","10.png","11.png","12.png","13.png","14.png","15.png","16.png",
   "17.png","18.png","19.png","20.png","21.png","22.png"
@@ -47,7 +48,8 @@ function preload() {
     rym[i] = loadImage("assets/animacion/" + numeroAnimacion[i]);
   } 
   
-  miFuente = loadFont("assets/Jersey15-Regular.ttf"); 
+ sonido = loadSound("assets/RickandMortyThemeSong.mp3");
+ miFuente = loadFont("assets/Jersey15-Regular.ttf"); 
 }
 
 function setup() {
