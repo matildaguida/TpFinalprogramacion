@@ -6,12 +6,14 @@ function mostrarPortada() {
   rectMode(CENTER);
   rect(width / 2, height - 80, 350, 50, 10);
   rect(width / 2, height - 25, 100, 50, 10);
+  rect(width / 2 +250 , height - 450, 100, 50, 10);
 
   fill(255);
   textAlign(CENTER, CENTER);
   textSize(24);
   text("Pulse 'Espacio' para comenzar", width / 2, height - 80);
   text("Créditos", width / 2, height - 25);
+  text("musica",width /2 + 250,height -450);
 
   if (boton(width / 2, height - 80, 350, 50)){
     estado = 1;
@@ -19,7 +21,10 @@ function mostrarPortada() {
   if (boton(width / 2, height - 25, 100, 50)){
     estado = numero.length + 1;
   }
+  if (boton(width/2 + 250, height -450,100,50)){
+    estado = 0;
 } 
+}
 
 // Función para mostrar cualquier imagen con un texto opcional
 function mostrarImagenConTexto(indiceImagen, texto) {
