@@ -7,7 +7,7 @@ let numero = [
 let estado = 0; // Estado inicial
 let miFuente;
 let tiempoEstado = 0; // guarda cuando entramos al estado
-let duracionEstado = 3000; // 3000 ms = 3 segundos por estado
+let duracionEstado = 5000; // 5000 ms = 5 segundos por estado
 let sonido;
 let musicaActiva = false;
 let numeroAnimacion =[
@@ -126,7 +126,7 @@ function draw() {
     mostrarImagenConTexto(numero.length - 1, textos[20]);
     botonExtraInicio();
    
-   if ( (millis() - marcaEnElTiempo) > 470 ) {  
+   if ( (millis() - marcaEnElTiempo) > 300 ) {  
     //
     marcaEnElTiempo = millis();
    
