@@ -1,3 +1,5 @@
+//video luz clarita moral cardozo https://youtu.be/mjYg9SdnUjU
+// video guida maltilda https://youtu.be/MCVWIT9mUPs?si=_p0DpmgCy39BwgzI
 let portada;
 let imagenes = [];
 let numero = [
